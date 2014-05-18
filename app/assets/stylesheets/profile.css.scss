@@ -186,12 +186,11 @@ div.referee {
 .buttons .hire {
     padding: 6px 29px;
 }
-
 .list-item .name {
   padding-bottom: 5px;
   display: inline-block;
   overflow: hidden;
-  white-space: nowrap;
-  width: 191px;
-  text-overflow:ellipsis;
+  width: 230px;
+  text-overflow: ellipsis;
+  font-size: 14px;
 }
