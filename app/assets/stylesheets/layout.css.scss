@@ -55,6 +55,18 @@ body {
 
 // ======== header =======
 
+
+nav#menu {
+    background: darkblue;
+}
+#menu li, #menu a {
+    color: white;
+    list-style: none;
+    line-height: 3em;
+    text-decoration: none;
+    font-size: 20px;
+}
+
 #menu {
   @extend .transition-left;
 
