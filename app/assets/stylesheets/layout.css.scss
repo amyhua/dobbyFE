@@ -123,9 +123,6 @@ h5 {
 // ======== header =======
 
 
-nav#menu {
-    background: darkblue;
-}
 #menu li, #menu a {
     color: white;
     list-style: none;
@@ -136,6 +133,8 @@ nav#menu {
 
 #menu {
   @extend .transition-left;
+
+  background: rgba(226, 124, 0, 0.93);
 
   position: fixed;
   top: 0;
@@ -148,6 +147,15 @@ nav#menu {
   &.active{
     left: 0;
   }
+}
+
+#menu ul {
+    padding: 0;
+}
+#menu ul > li {
+    padding: 13px 39px;
+    border-bottom: solid 1px #A77458;
+    box-shadow: inset -1px -3px 6px solid 1px #A77458;
 }
 
 .push {
