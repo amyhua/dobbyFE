@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 group :production do
-    # Use Heroku PostgreSQL for Production
-	gem 'pg'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development do
