@@ -64,7 +64,7 @@ app.config(function($routeProvider){
     })
     .when('/dobby_matching_jobs', {
       templateUrl: '/pages/dobby_matching_jobs.html',
-      controller: 'HomeCtrl'
+      controller: 'DobbyCtrl'
     })
     .when('/dobby_past_jobs', {
       templateUrl: '/pages/dobby_past_jobs.html',
@@ -100,6 +100,10 @@ app.config(function($routeProvider){
       controller: 'ProfileCtrl'
     })
     .when('/profile/:profile_id', {
+      templateUrl: '/pages/profile.html',
+      controller: 'ProfileCtrl'
+    })
+    .when('/profile', {
       templateUrl: '/pages/profile.html',
       controller: 'ProfileCtrl'
     })

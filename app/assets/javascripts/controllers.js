@@ -1,6 +1,9 @@
 app.controller('HomeCtrl', function($scope, $location, jobProperties){
   console.log('HomeCtrl');
 
+  $('#menu').removeClass('active');
+  $('.push').removeClass('active');
+
   $scope.jobString = jobProperties.getProperty('jobString');
 
   console.log($scope.jobString);
@@ -18,6 +21,17 @@ app.controller('HomeCtrl', function($scope, $location, jobProperties){
     console.log('autcomplete!');
   });
 
+});
+
+app.controller('MenuCtrl', function($scope, $http, $location, $rootScope){
+  console.log('MenuCtrl')
+
+  $scope.availabilityStatus = 'Off'; // by default
+
+  $scope.changeAvailability = function(stat){
+    $scope.availabilityStatus = stat;
+    console.log('stat', stat);
+  }
 });
 
 app.controller('JobCtrl', function($scope, $location, $http, jobProperties){

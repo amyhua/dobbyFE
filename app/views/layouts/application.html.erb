@@ -11,19 +11,27 @@
 
 
 </head>
-<body>
+<body ng-app="app">
 
-<div ng-app="app" id="content" ng-view></div>
+<div id="content" ng-view></div>
 
 
-<nav id="menu" class="panel" role="navigation">
+<nav id="menu" class="panel" menu role="navigation" ng-controller="MenuCtrl">
   <ul>
-    <li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Create a Job</a></li>
+    <li class="change-availability" ng-show="availabilityStatus">
+      <span class="avail-status">Availability</span>
+      <a ng-show="availabilityStatus=='Off'" ng-click="changeAvailability('On')" id="off-btn"><img src="assets/off-btn.png"><span class="avail-text">Not Available</span></a>
+      <a ng-show="availabilityStatus=='On'" ng-click="changeAvailability('Busy')" id="on-btn"><img src="assets/on-btn.png"><span class="avail-text">Available</span></a>
+      <a ng-show="availabilityStatus=='Busy'" ng-click="changeAvailability('Off')" id="in-between-btn"><img src="assets/in-between-btn.png"><span class="avail-text">On a Job</span></a>
+    </li>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#home">Create a Job</a></li>
     <li><a href="#">Edit Payment</a></li>
     <li><a href="#">Support</a></li>
     <li><a href="#">Sign out</a></li>
+    <li class="dobby"><a href='#dobby_matching_jobs' ng-show="availabilityStatus=='On'">Browse relevant jobs</a></li>
+    <li class="dobby"><a ng-show="availabilityStatus=='On'">Invites (5)</a></li>
+    <li class="dobby busy"><a ng-show="availabilityStatus=='Busy'">Mark Jobs as Complete</a></li>
   </ul>
 </nav>
 

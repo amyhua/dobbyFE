@@ -1,1 +1,43 @@
-dobby_matching_jobs.html
+<div class="push">
+  <ul class="top-header">
+    <li class="left"><a class="menu-link">&#9776;</a></li>
+    <li class="center" >Relevant Jobs</li>
+    <li class="right"><a class="button-link" ng-click="openFilters()">Filter</a></li>
+  </ul>
+  <div class="container">
+    <div class="list-item-content clearfix">
+      <span class="pull-left">Job</span>
+      <span class="pull-right">Offer Price</span>
+    </div>
+    <div ng-repeat="job in availableJobs" class="list-item" ng-click="goToProfile(dobby.bidder_id, dobby.jobID, dobby.askingPrice)">
+      <img class="avatar" src="https://avatars0.githubusercontent.com/u/3581705?s=460" width="50">
+      <div>
+        <span class="name">{{job.posterFirstName}} {{job.posterLastName | trim}}</span>
+        <span class="asking-price">{{job.offerPrice | formatCurrency }}</span>
+        <br>
+
+        <span class="rating" data-rounded-rating="{{job.posterRating | roundRating }}"></span>
+        <span class="num-ratings">({{job.posterNumRatings}})</span>
+        <span class="eta">{{job.distance | formatMiles }}</span>
+
+        <div class="category-ratings">
+          <!-- {{ job.description | trim }} -->
+        </div>
+        <div class="badges">
+          <span class="verified" ng-show="dobby.verified">verified!</span>
+          <span class="background-checked" ng-show="dobby.bgChecked">background-checked!</span>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="bidders.length == 0" class="no-list-item">
+      <div id="none-message">
+        We're sorry, there are no relevant jobs available!
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="filters">
+</div>
