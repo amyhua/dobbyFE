@@ -125,7 +125,7 @@ h5 {
 
 
 #menu li, #menu a {
-    color: white;
+    color: black;
     list-style: none;
     line-height: 3em;
     text-decoration: none;
@@ -135,7 +135,7 @@ h5 {
 #menu {
   @extend .transition-left;
 
-  background: rgba(226, 124, 0, 0.93);
+  background: #e8e8e8;
 
   position: fixed;
   top: 0;
@@ -154,9 +154,25 @@ h5 {
     padding: 0;
 }
 #menu ul > li {
-    padding: 13px 39px;
-    border-bottom: solid 1px #A77458;
+    padding: 0 36px;
+    border-bottom: solid 1px #ddd;
     box-shadow: inset -1px -3px 6px solid 1px #A77458;
+    &:first-child {
+      padding: 18px 36px;
+    }
+    &.dobby {
+
+      background: rgba(122, 240, 42, 0.39);
+      box-shadow: inset 0px 1px 9px #42A300;
+      border: none;
+
+      &.busy {
+        background: rgba(212, 221, 104, 0.39);
+  box-shadow: inset 0px 1px 9px #A38900;
+
+      }
+
+    }
 }
 
 .push {
@@ -167,4 +183,8 @@ h5 {
   &.active {
     left: 300px;
   }
+}
+
+.change-availability img {
+    width: 75px;
 }

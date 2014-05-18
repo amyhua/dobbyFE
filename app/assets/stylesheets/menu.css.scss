@@ -1,0 +1,28 @@
+span.avail-status {
+    color: #696969;
+    font-size: 14px;
+    padding-right: 34px;
+    position: relative;
+    top: -13px;
+}
+li.change-availability {
+    height: 50px;
+    position: relative;
+}
+
+.change-availability a{
+    position: absolute;
+    top: 16px;
+    right: 32px;
+    z-index: 0;
+}
+
+span.avail-text {
+    font-size: 12px;
+    position: absolute;
+    top: 12px;
+    right: 1px;
+    width: 72px;
+    text-align: center;
+    color: #949494;
+}

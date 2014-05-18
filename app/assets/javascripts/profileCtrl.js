@@ -1,6 +1,9 @@
 app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLoadingBar, $routeParams, userProperties){
   console.log('ProfileCtrl', $routeParams);
 
+  $('#menu').removeClass('active');
+  $('.push').removeClass('active');
+
   // TODO
 
   $scope.jobID = $routeParams['job_id'];
