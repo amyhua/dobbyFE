@@ -124,6 +124,7 @@ section.references-list {
       border: none;
     }
 }
+
 .referee .name {
     float: left;
     padding: 10px;
@@ -132,10 +133,10 @@ section.references-list {
     color: #696969;
 }
 
-div.ref-type {
+div.ref-persona {
     float: left;
+    padding-left: 10px;
     width: 200px;
-    padding-left: 5px;
     font-size: 13px;
     font-family: 'Bitter', sans-serif;
     color: #ACACAC;
@@ -146,8 +147,25 @@ div.ref-type {
 div.referee {
     height: 50px;
     margin-bottom: 1em;
+    position: relative;
 }
 .reference .comment {
     font-size: 13px;
     padding-bottom: 1em;
+}
+
+.name .ref-type {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 13px;
+}
+.name .ref-type.Neutral {
+    color: rgb(167, 154, 143);
+}
+.name .ref-type.Positive {
+    color: green;
+}
+.name .ref-type.Negative {
+    color: red;
 }
