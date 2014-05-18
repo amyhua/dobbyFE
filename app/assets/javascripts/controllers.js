@@ -47,6 +47,7 @@ app.controller('JobCtrl', function($scope, $location, $http, jobProperties){
     jobProperties.setProperty('jobString', $scope.jobString);
     jobProperties.setProperty('jobDetail', $scope.jobDetail);
     jobProperties.setProperty('jobAddress', $scope.jobAddress);
+    jobProperties.setProperty('jobMaxOffer', $scope.jobMaxOffer);
 
     // validate required fields
     if ($scope.jobAddress == '' || $scope.jobUrgency == '' || $scope.jobString == '') {
@@ -68,14 +69,31 @@ app.controller('JobCtrl', function($scope, $location, $http, jobProperties){
 
 app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLoadingBar, jobProperties, Pusher){
 
-  $scope.maxAuctionDuration = 1000*60*5; // in seconds, taken from settings
 
-  var now = new Date();
-  $scope.endTime = now.getTime() + $scope.maxAuctionDuration;
-  // TODO: hard coded 5 minutes
+
+  $scope.jobMaxOffer = jobProperties.getProperty('jobMaxOffer');
+  console.log($scope.jobMaxOffer);
+
+  $scope.raiseMaxOffer = function(){
+    jobProperties.setProperty('jobMaxOffer', $scope.newJobMaxOffer);
+    debugger
+  }
 
   $scope.beginAuction = function(){
+
+    $scope.job = jobProperties.job;
+
     console.log('beginAuction');
+
+    $scope.maxAuctionDuration = 1000*60*0.1; // in seconds, taken from settings
+
+    var now = new Date();
+    $scope.endTime = now.getTime() + $scope.maxAuctionDuration;
+    // TODO: hard coded 5 minutes
+
+    $timeout(function(){
+      $scope.endAuction();
+    }, $scope.maxAuctionDuration - 1000)
 
     $scope.bids = jobProperties.getProperty('bids');
 
@@ -171,18 +189,24 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
 
   // TODO: mock!
   $scope.bidders = [
-    { bidder_id: 12, bgChecked: true,  verified: true, askingPrice: 14.50, rating: 0 },
-    { bidder_id: 13, bgChecked: false, verified: true, askingPrice: 14.50, rating: 1 },
-    { bidder_id: 14, bgChecked: false, verified: true, askingPrice: 14.50, rating: 1.5 },
-    { bidder_id: 15, bgChecked: false, verified: true, askingPrice: 14.50, rating: 2 },
-    { bidder_id: 16, bgChecked: false, verified: true, askingPrice: 14.50, rating: 2.5 },
-    { bidder_id: 1234, bgChecked: false, verified: true, askingPrice: 14.50, rating: 3 },
-    { bidder_id: 132, bgChecked: false, verified: true, askingPrice: 14.50, rating: 3.5 },
-    { bidder_id: 132, bgChecked: false, verified: true, askingPrice: 14.50, rating: 4 },
-    { bidder_id: 145, bgChecked: false, verified: true, askingPrice: 14.50, rating: 4.5 },
-    { bidder_id: 19, bgChecked: false, verified: true, askingPrice: 14.50, rating: 5 }
+    { bidder_id: 12, bgChecked: true,  verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 0 },
+    { bidder_id: 13, bgChecked: false, verified: true, distance: 1.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 1 },
+    { bidder_id: 14, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 1.5 },
+    { bidder_id: 15, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 2 },
+    { bidder_id: 16, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 2.5 },
+    { bidder_id: 17, bgChecked: false, verified: true, distance: 5.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 3 },
+    { bidder_id: 19, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 3.5 },
+    { bidder_id: 25, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4 },
+    { bidder_id: 33, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4.5 },
+    { bidder_id: 63, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 5 }
   ]
 
+  $scope.bidders = $scope.bidders
+                    .sort(function(a,b){ return b.askingPrice - a.askingPrice })
+                    .sort(function(a,b){ return b.rating - a.rating })
+                    .sort(function(a,b){ return a.distance - b.distance })
+
+                    $scope.bidders = []
   $scope.goToProfile = function(bidder_id){
     console.log('goToProfile', bidder_id);
     $location.path('/profile/'+bidder_id);

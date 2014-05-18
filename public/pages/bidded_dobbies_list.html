@@ -2,18 +2,51 @@
   <ul class="top-header">
     <li class="left"><a class="menu-link">&#9776;</a></li>
     <li class="center" id="logo">Dobby</li>
-    <li class="right">Filter</li>
+    <li class="right"><a class="button-link" ng-click="openFilters()">Filter</a></li>
   </ul>
   <div class="container">
+    <div class="list-item-content clearfix">
+      <span class="pull-left">Bidder</span>
+      <span class="pull-right">Asking Price</span>
+    </div>
     <div ng-repeat="dobby in bidders" class="list-item" ng-click="goToProfile(dobby.bidder_id)">
       <img class="avatar" src="https://avatars0.githubusercontent.com/u/3581705?s=460" width="50">
       <div>
         <span class="name">Amy H</span>
         <span class="asking-price">{{dobby.askingPrice | formatCurrency }}</span>
-        <span class="verified" ng-show="dobby.verified">V</span>
-        <span class="background-checked" ng-show="dobby.bgChecked">BG</span>
+        <br>
+
         <span class="rating" data-rounded-rating="{{dobby.rating}}"></span>
+        <span class="num-ratings">({{dobby.numRatings}})</span>
+        <span class="eta">{{dobby.distance | formatMiles }}</span>
+
+        <div class="category-ratings">
+          <span ng-show="dobby.topCategory1">
+            <span class="category">{{dobby.topCategory1}}</span>: {{dobby.topCategory1Rating | formatDecimal }}/5 ({{dobby.topCategory1numRatings}})</span>
+          <span ng-show="dobby.topCategory2">
+          <span class="category">, {{dobby.topCategory2}}</span>: {{dobby.topCategory2Rating | formatDecimal }}/5 ({{dobby.topCategory2numRatings}})</span>
+        </div>
+        <div class="badges">
+          <span class="verified" ng-show="dobby.verified">verified!</span>
+          <span class="background-checked" ng-show="dobby.bgChecked">background-checked!</span>
+        </div>
       </div>
     </div>
+
+    <div class="no-list-item">
+      <div id="none-message">We're sorry, nobody bidded for your job!
+      <div id="raise-price">Try raising your maximum offer price:
+      <br>
+      <form ng-submit="raiseMaxOffer()">
+      $ <input type="number" min="{{JobMaxOffer}}" ng-model="newJobMaxOffer" max="99999" value="{{jobMaxOffer}}">
+      </form>
+      </div>
+      </div>
+      </div>
+    </div>
+
   </div>
+</div>
+
+<div id="filters">
 </div>

@@ -14,3 +14,19 @@ app.directive('menuLink', function($timeout){
     }
   }
 });
+
+app.directive('topHeader', function($timeout){
+  return {
+    restrict: 'C',
+    replace: false,
+    link: function($scope, element, attrs) {
+
+      console.log('topHeader')
+
+      $scope.openFilters = function(){
+        $('#filters').toggleClass('active');
+      }
+
+    }
+  }
+});

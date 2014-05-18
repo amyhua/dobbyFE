@@ -15,8 +15,7 @@
   <div ng-show="numBidsMade">{{numBidsMade}} bids made</div>
   <div ng-show="winningBid">Currently winning bid: {{winningBid}}</div>
   <div id="timer">
-    <div>Auction ends in</div>
-    <timer end-time="endTime"><span ng-show="days">{{days}} days, </span><span ng-show="hours">{{hours}} hours, </span><span ng-show="minutes">{{minutes}} minutes, </span><span ng-show="seconds">{{seconds}} seconds.</span></timer>
+    <timer end-time="endTime"><span ng-show="minutes || seconds">Auction ends in </span><span ng-show="days">{{days}} days, </span><span ng-show="hours">{{hours}} hours, </span><span ng-show="minutes">{{minutes}} minutes, </span><span ng-show="seconds">{{seconds}} seconds.</span></timer>
   </div>
 
   <div ng-show="winningBid" class="button" ng-click="endAuction()">

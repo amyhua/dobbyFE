@@ -41,7 +41,7 @@ label {
 
     select {
         direction: rtl;
-        height: 2em;
+        height: auto;
         -webkit-appearance: none;
         background: transparent;
         border: 0;
@@ -58,15 +58,13 @@ input, textarea, select {
     border: 0;
     padding: 0.5em;
     font-family: inherit;
-    background: #eee;
+    background: transparent;
     font-size: 16px;
     width: 94%;
     max-width: 94%;
     white-space: normal;
 
     @extend .ellipse-text-overflow;
-
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 
@@ -83,4 +81,26 @@ input#submit {
     margin: 0;
     max-width: 100%;
     background: orange
+}
+
+input[type="number"] {
+    background: #ddd;
+    width: 50px;
+    border-radius: 10px;
+    padding-left: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.inline input[type="number"] {
+    width: 25%;
+    background: inherit;
+    border-bottom: solid 1px;
+    &:before {
+        content: "$";
+    }
+}
+span.dollar {
+    position: relative;
+    left: 49px;
 }

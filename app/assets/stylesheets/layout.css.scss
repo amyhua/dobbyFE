@@ -7,6 +7,11 @@ body {
     font-weight: 300;
 }
 
+#logo, .logo-font {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 300;
+}
+
 #content {
   overflow-x: hidden;
 }
@@ -17,6 +22,7 @@ body {
   background: lightblue;
   line-height: 3em;
   @extend .clearfix;
+  box-shadow: 1px 1px 5px #888;
 
   z-index: 999999;
   opacity: 0.95;
@@ -59,6 +65,14 @@ body {
 
 .container {
   padding-top: 3em;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
 }
 
 // ======== header =======

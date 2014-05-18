@@ -15,4 +15,5 @@ class Fake < ActiveRecord::Base
       { user_id: 2 }
     ]
   end
+
 end

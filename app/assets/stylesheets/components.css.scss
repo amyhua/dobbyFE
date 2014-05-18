@@ -1,7 +1,8 @@
 #prompt {
-  font-size: 24px;
+  font-size: 36px;
   margin-top: 200px;
   text-align: center;
+  color: #ff0000;
 }
 
 #job-string {
@@ -49,6 +50,25 @@
     cursor: pointer;
 }
 
+.button-link {
+    padding: 6px 10px;
+    background: rgb(0, 163, 255);
+    margin-right: -10px;
+    border-radius: 8px;
+    font-weight: 400;
+    color: white;
+    /* box-shadow: inset 0px 3px 15px white, inset 0px -2px 12px white; */
+    background-image: linear-gradient(to bottom,#5bc0de,#2f96b4);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    color: white;
+}
+
+li#logo {
+    font-size: 27px;
+    font-weight: 400;
+    @extend .logo-font;
+}
 
 // ==== cancel button
 
@@ -152,7 +172,7 @@ div#shadow {
   width: 84px;
   height: 16px;
   background-position: 0px 0px;
-  display: block;
+  display: inline-block;
 
   &[data-rounded-rating="0"] {
     background-position: 0px 0px;
@@ -187,10 +207,12 @@ div#shadow {
 }
 .list-item {
     width: 350px;
-    height: 60px;
+    height: 78px;
     padding: 10px 5px;
     border-bottom: solid 1px #ddd;
     cursor: pointer;
+    position: relative;
+    
     &:hover, &:focus {
       background: #eee;
     }
@@ -218,6 +240,80 @@ div#shadow {
       float: right;
       position: absolute;
       right: 10px;
-      color: darkred;
+      color: rgb(39, 167, 54);
+    }
+}
+
+div.badges {
+    margin-top: -5px;
+}
+.verified, .background-checked {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.verified {
+  color: #75c975;
+}
+
+.num-ratings {
+    display: inline;
+    font-size: 14px;
+    position: relative;
+    bottom: 3px;
+}
+
+.eta {
+    font-size: 11px;
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    color: #999;
+}
+
+.category-ratings {
+    font-size: 12px;
+    padding-bottom: 3px;
+    color: #9B9B9B;
+    .category {
+        font-style: italic;
+        font-weight: 400;
+        color: rgb(82, 82, 82);
+    }
+}
+
+.background-checked {
+  color: #EB6D19;
+}
+
+.list-item-content {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-bottom: solid 1px #ddd;
+  background: #E2E2E2;
+  box-shadow: inset 1px -2px 5px #C0C0C0;
+  font-weight: 600;
+  width: 340px;
+}
+
+.no-hover {
+    &:hover {
+      background: inherit;
+    }
+}
+
+.no-list-item {
+  padding: 10px;
+}
+
+#none-message {
+    vertical-align: middle;
+    padding-top: 28px;
+    text-align: center;
+    width: 340px;
+    line-height: 2em;
+    &:hover {
+      background: inherit;
     }
 }
