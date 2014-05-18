@@ -1,0 +1,38 @@
+#prompt {
+  font-size: 24px;
+  margin-top: 200px;
+  text-align: center;
+}
+
+#job-string {
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 1em;
+    border: 0;
+    border-bottom: solid 1px #ddd;
+
+    &:focus {
+      outline-color: #ddd;
+      outline-width: 1px;
+    }
+}
+
+
+#examples {
+  padding: 2em;
+  line-height: 1.5em;
+  header {
+      line-height: 2.5em;
+      font-size: 1.2em;
+      color: red;
+  }
+}
+
+#new-job-hint {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: grey;
+}

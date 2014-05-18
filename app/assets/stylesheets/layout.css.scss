@@ -1,0 +1,46 @@
+@import '__global';
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.top-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: lightblue;
+  line-height: 3em;
+  @extend .clearfix;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  li {
+    padding: 0 1em;
+  }
+
+  .center {
+    text-align: center;
+    top: 0;
+    margin: auto;
+    pointer-events: none;
+
+  }
+  .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+
+.container {
+  padding-top: 3em;
+}

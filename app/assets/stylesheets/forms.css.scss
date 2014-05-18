@@ -1,0 +1,60 @@
+@import '__global';
+
+div.form-group {
+    margin: 1em;
+    padding: 0.5em;
+    border: solid 1px;
+    border-radius: 5px;
+
+    textarea {
+        height: 4em;
+
+        &.textarea-sm {
+            height: 3em;
+        }
+
+        &.textarea-lg {
+            height: 5em;
+        }
+    }
+}
+
+label {
+    display: block;
+    padding-bottom: 0.5em;
+}
+
+.form-group.inline {
+    @extend .clearfix;
+
+    label {
+        display: inline-block;
+        padding: 0.5em;
+    }
+    input, select {
+        display: inline;
+        text-align: right;
+        width: 50%;
+        float: right;
+    }
+}
+
+input, textarea, select {
+    border: 0;
+    padding: 0.5em;
+    font-family: inherit;
+    background: #eee;
+    font-size: 16px;
+    width: 94%;
+    max-width: 94%;
+
+    @extend .ellipse-text-overflow;
+
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    &:focus {
+        outline: none;
+    }
+}

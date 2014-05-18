@@ -1,1 +1,23 @@
-home.html
+<ul class="top-header">
+  <li class="left"></li>
+  <li class="center" id="logo">Dobby</li>
+  <li class="right"></li>
+</ul>
+
+<div class="container">
+
+  <div id="prompt">Dobby, can you...?</div>
+  <form id="new-job" ng-submit="submit()">
+    <input id="job-string" ng-model="jobString" type="text" name="text">
+  </form>
+  <small id="new-job-hint">1 sentence (Max. 140 characters)</small>
+
+  <section id="examples">
+    <header>Examples</header>
+    <article>Get me Starbucks coffee ASAP</article>
+    <article>Get me Starbucks coffee ASAP</article>
+    <article>Get me Starbucks coffee ASAP</article>
+    <article>Get me Starbucks coffee ASAP</article>
+  </section>
+
+</div>

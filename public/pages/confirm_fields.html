@@ -1,1 +1,41 @@
-confirm_fields.html
+<ul class="top-header">
+  <li class="left" ng-click="goBack('home')">Back</li>
+  <li class="center" id="logo">Dobby</li>
+  <li class="right"></li>
+</ul>
+
+<div class="container">
+<form id="confirm-fields">
+  <div class="form-group">
+  <!-- TODO: auto-expand textarea -->
+    <label>Job Description</label>
+    <textarea class="textarea-sm" ng-model="jobString" wrap="hard" cols="20" maxlength="140">
+    </textarea>
+  </div>
+
+  <div class="form-group">
+  <!-- TODO: auto-expand textarea -->
+    <label>Additional Details</label>
+    <textarea class="textarea-lg" ng-model="jobDetail" wrap="hard" cols="20" maxlength="360" placeholder="Include requirements, supplies provided, etc.">
+    </textarea>
+  </div>
+
+  <div class="form-group inline">
+    <label>Address</label>
+    <input ng-model="jobAddress" wrap="hard" cols="20">
+  </div>
+
+  <div class="form-group inline">
+    <label>I need a Dobby...</label>
+    <select ng-model="jobUrgency" name="jobUrgency" ng-options="urgencyType for urgencyType in urgencyTypes"
+  </div>
+
+
+</form>
+</div>
+
+<!--
+
+asdfasd;fjweofajw pefjaepwofiajsdpofjawpoefjaposdfjapwefjapodsfjapowefjapoewifjadskfjsdflkwej fpowejf pweojf peowfj pwefj ewpofj
+
+-->
