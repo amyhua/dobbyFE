@@ -1,3 +1,105 @@
-profile
+<div class="push profile">
+  <ul class="top-header">
+    <li class="left"><a class="menu-link">&#9776;</a></li>
+    <li class="center" id="logo">Dobby</li>
+    <li class="right"></li>
+  </ul>
 
-for both dobby and non-dobby (since they can be the same person!)
+  <div class="container-flanked">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <img src="{{profile.imageUrl}}" width="100">
+      </div>
+      <div class="main-info">
+        <span class="name-lg">{{profile.firstName}} {{ profile.lastName | trim }}</span>
+        <br>
+        <span class="rating" data-rounded-rating="{{profile.overallRating | roundRating}}"></span>
+        <span class="rating-num">({{profile.numRatingsOverall}})</span>
+        <br>
+        <span class="checks">
+          <span class="check">
+            <strong>Verified: </strong><span class="{{profile.verified}}">{{profile.verified}}</span>
+            </span>
+            <span class="check">
+            <strong>Background Checked: </strong><span class="{{profile.bgChecked}}">{{profile.bgChecked}}</span>
+            </span>
+        </span>
+      </div>
+    </div>
+    <div class="profile-section about-me">
+      <h5>About Me</h5>
+      {{profile.aboutMe}}
+    </div>
+    <div class="profile-section references">
+    <h5>References ({{profile.numRatingsOverall}})</h5>
+      <div class="reference-filters">
+        <div class="reference-filter">
+          <span class="ref-n">{{profile.numRatingsFromCustomers}}</span>
+          <span class="ref-desc">from their customers</span>
+        </div>
+        <div class="reference-filter">
+          <span class="ref-n">{{profile.numRatingsFromDobbies}}</span>
+          <span class="ref-desc">from their dobbies</span>
+        </div>
+      </div>
+
+      <section class="references-list">
+
+        <article class="reference">
+          <div class="referee">
+            <div class="avatar">
+              <img src="https://avatars0.githubusercontent.com/u/1119680?s=460" width="50">
+            </div>
+            <div class="name">
+              Joe S
+            </div>
+          </div>
+          <div class="comment">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invento.
+          </div>
+        </article>
+
+
+        <article class="reference">
+          <div class="referee">
+            <div class="avatar">
+              <img src="https://avatars0.githubusercontent.com/u/1119680?s=460" width="50">
+            </div>
+            <div class="name">
+              Joe S
+            </div>
+            <div class="ref-type">
+            Customer
+            </div>
+          </div>
+          <div class="comment">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invento.
+          </div>
+        </article>
+
+
+        <article class="reference">
+          <div class="referee">
+            <div class="avatar">
+              <img src="https://avatars0.githubusercontent.com/u/1119680?s=460" width="50">
+            </div>
+            <div class="name">
+              Joe S
+            </div>
+            <div class="ref-type">
+            Customer
+            </div>
+          </div>
+          <div class="comment">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invento.
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <ul class="bottom-header">
+    <li class="left"><a ng-click="goBack()" class="button-plain">Back</a></li>
+
+  </ul>
+</div>

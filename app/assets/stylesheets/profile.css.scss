@@ -1,0 +1,153 @@
+/* line 1, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+div.profile-header {
+  padding: 10px 5px 14px;
+  height: 100px;
+  margin: 19px 5px;
+  border-bottom: solid 1px #E7D3C1;
+}
+
+/* line 7, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+div.profile-avatar img {
+  border-radius: 10px;
+}
+
+/* line 10, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+div.main-info.ng-binding {
+  float: left;
+  height: 100%;
+}
+
+/* line 14, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+div.profile-avatar {
+  float: left;
+}
+
+/* line 17, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.main-info .name-lg {
+  font-size: 26px;
+  width: 175px;
+  display: inline-block;
+  padding: 0 10px;
+  font-family: 'Bitter', sans-serif;
+  color: #867d6a;
+  overflow: hidden;
+}
+
+/* line 26, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.main-info .rating {
+  margin: 5px 10px;
+}
+
+/* line 29, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.main-info .rating-num {
+  position: relative;
+  top: -10px;
+  left: -9px;
+  font-size: 14px;
+}
+
+/* line 36, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.checks {
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+/* line 40, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+span.checks strong {
+  font-family: 'Bitter', sans-serif;
+  font-weight: 200;
+  color: #ad8f69;
+}
+
+/* line 45, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.check {
+  padding-right: 3px;
+}
+
+/* line 48, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.checks .Yes {
+  color: #22c022;
+  font-weight: bold;
+}
+
+/* line 52, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/profile.css.scss */
+.checks .No {
+  color: #6f6f6f;
+  font-weight: 100;
+}
+
+.profile-section {
+    padding: 5px;
+    font-size: 15px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #ddd;
+    margin: 15px;
+    &:last-child {
+        border: none;
+    }
+}
+.profile h5 {
+    font-size: 20px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+div.reference-filter {
+    display: inline-block;
+    margin: 10px 0;
+    width: 49%;
+    text-align: center;
+}
+.reference-filters .ref-n {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 7px;
+    border: solid 1px #ddd;
+    box-shadow: inset 2px 1px 3px #C5C2B1, inset -1px -2px 5px #FAFAFA;
+}
+
+
+/*   REFERENCES */
+
+section.references-list {
+    margin-top: 2em;
+    border: solid 1px #ddd;
+    padding: 1em;
+}
+
+
+.reference {
+  border-bottom: solid 1px darkorange;
+  margin-bottom: 2em;
+  margin-top: 2em;
+    &:last-child {
+      border: none;
+    }
+}
+.referee .name {
+    float: left;
+    padding: 10px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    color: #696969;
+}
+
+div.ref-type {
+    float: left;
+    width: 200px;
+    padding-left: 5px;
+    font-size: 13px;
+    font-family: 'Bitter', sans-serif;
+    color: #ACACAC;
+}
+.referee .avatar {
+    float: left;
+}
+div.referee {
+    height: 50px;
+    margin-bottom: 1em;
+}
+.reference .comment {
+    font-size: 13px;
+    padding-bottom: 1em;
+}

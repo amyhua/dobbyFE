@@ -16,7 +16,7 @@
         <span class="asking-price">{{dobby.askingPrice | formatCurrency }}</span>
         <br>
 
-        <span class="rating" data-rounded-rating="{{dobby.rating}}"></span>
+        <span class="rating" data-rounded-rating="{{dobby.rating | roundRating }}"></span>
         <span class="num-ratings">({{dobby.numRatings}})</span>
         <span class="eta">{{dobby.distance | formatMiles }}</span>
 

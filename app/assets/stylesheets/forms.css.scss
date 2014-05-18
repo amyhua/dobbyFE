@@ -5,6 +5,7 @@ div.form-group {
     padding: 0.5em;
     border: solid 1px;
     border-radius: 5px;
+    border-color: rgb(255, 203, 140);
 
     textarea {
         height: 4em;
@@ -23,6 +24,7 @@ div.form-group {
 label {
     display: block;
     padding-bottom: 0.5em;
+    color: rgb(221, 121, 0);
 }
 
 .form-group.inline {
@@ -73,15 +75,6 @@ input, textarea, select {
     }
 }
 
-input#submit {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 1em;
-    margin: 0;
-    max-width: 100%;
-    background: orange
-}
 
 input[type="number"] {
     background: #ddd;
@@ -103,4 +96,18 @@ input[type="number"] {
 span.dollar {
     position: relative;
     left: 49px;
+}
+.left .button-plain {
+    margin-left: 10px;
+}
+
+.right .button-plain {
+    margin-right: 10px;
+}
+.button-plain {
+    color: white;
+    padding: 6px 10px;
+    input, a {
+        color: white;
+    }
 }

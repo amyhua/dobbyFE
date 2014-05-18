@@ -3,23 +3,54 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
 #logo, .logo-font {
-  font-family: 'Alegreya Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Bitter', sans-serif;
+  font-weight: 400;
+  color: darkorange;
+}
+
+h1, h2, h3, h4, h5 {
+  @extend .logo-font;
+}
+
+h5 {
+  color: #696969;
+}
+
+#facebook-login {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: darkorange;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+  margin-top: 150px;
+  &:hover, &:visited {
+    color: white;
+  }
+}
+
+#intro {
+    text-align: center;
+    margin-top: 175px;
 }
 
 #content {
   overflow-x: hidden;
 }
+
 .top-header {
   list-style: none;
   margin: 0;
   padding: 0;
-  background: lightblue;
+  background: white;
   line-height: 3em;
   @extend .clearfix;
   box-shadow: 1px 1px 5px #888;
@@ -52,7 +83,16 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+    padding: 0;
   }
+}
+
+.bottom-header {
+  @extend .top-header;
+  bottom: 0;
+  height: 50px;
+  top: inherit;
+  background: rgba(255, 171, 69, 1);
 }
 
 
@@ -65,6 +105,11 @@ body {
 
 .container {
   padding-top: 3em;
+}
+
+.container-flanked {
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 .pull-right {
@@ -108,6 +153,7 @@ nav#menu {
 .push {
   position: absolute;
   @extend .transition-left;
+  width: 360px;
   left: 0;
   &.active {
     left: 300px;

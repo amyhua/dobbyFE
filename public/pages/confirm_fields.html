@@ -1,11 +1,11 @@
-<ul class="top-header">
-  <li class="left" ng-click="goBack('home')">Back</li>
-  <li class="center" id="logo">Dobby</li>
-  <li class="right"></li>
-</ul>
+<div class="push">
 
-<div class="container">
+<ul class="top-header">
+  <li class="left"><a class="menu-link">&#9776;</a></li>
+  <li class="center" id="logo">Dobby</li>
+</ul>
 <form id="confirm-fields" ng-submit="confirmFields()">
+<div class="container-flanked">
   <div class="form-group">
   <!-- TODO: auto-expand textarea -->
     <label>Job Description</label>
@@ -35,14 +35,17 @@
     <span class="dollar">$</span> <input type="number" max="999999" min="14" ng-required="true" ng-model="jobMaxOffer" ng-model="jobMaxOffer" name="jobMaxOffer" required="true">
     </select>
   </div>
-
-  <input id="submit" type="submit" value="Submit">
-
-</form>
 </div>
 
+<ul class="bottom-header">
+  <li class="left" ng-click="goBack('home')"><a class="button-plain">Back</a></li>
+  <li class="right"><input class="button-plain" id="submit" type="submit" value="Submit"></li>
+</ul>
+
+</form>
 <!--
 
 asdfasd;fjweofajw pefjaepwofiajsdpofjawpoefjaposdfjapwefjapodsfjapowefjapoewifjadskfjsdflkwej fpowejf pweojf peowfj pwefj ewpofj
 
 -->
+</div>
