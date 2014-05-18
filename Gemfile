@@ -1,10 +1,21 @@
 source 'https://rubygems.org'
 
+group :production do
+    # Use Heroku PostgreSQL for Production
+	gem 'pg'
+end
+
+group :development do
+    # Use SQLite3 for development
+	gem 'sqlite3'
+    # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring    
+	gem 'spring'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
