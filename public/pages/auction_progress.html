@@ -1,1 +1,38 @@
-auction_progress.html
+<div class="progress-container" ng-init="beginAuction()">
+
+
+
+  <div id="cancel" ng-click="cancelAuction()">
+    Cancel <span class="cancel-button">&times;</span>
+  </div>
+  <div id="progress-animation">
+    <img src="assets/coyote.gif" height="70">
+  </div>
+  <div>
+    {{status}}
+  </div>
+  <div ng-show="numAvailableDobbies">Filtering {{numAvailableDobbies}} dobbies to fit your job</div>
+  <div ng-show="numInvitesSent">{{numInvitesSent}} invitations sent</div>
+  <div ng-show="numBiddersAccepted">{{numBiddersAccepted}} dobbies joined your auction</div>
+  <div ng-show="numBidsMade">{{numBidsMade}} bids made</div>
+  <div ng-show="winningBid">Currently winning bid: {{winningBid}}</div>
+  <div id="timer">
+    <div>Auction ends in</div>
+    <timer start-time="1357020000000"><span ng-show="days">{{days}} days, </span><span ng-show="hours">{{hours}} hours, </span><span ng-show="minutes">{{minutes}} minutes, </span><span ng-show="seconds">{{seconds}} seconds.</span></timer>
+  </div>
+
+  <div ng-show="winningBid" class="button" ng-click="endAuction()">
+    End Auction Now at ${{winningBid}}
+  </div>
+</div>
+
+
+<div id="confirmBox">
+    <div class="message">Are you sure you want to cancel this job request?</div>
+    <table>
+      <tr>
+        <td ng-click="confirmCancelling()" class="yes">Yes</td>
+        <td ng-click="cancelCancelling()" class="no">No</td>
+      </tr>
+    </table>
+</div>

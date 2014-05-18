@@ -1,0 +1,448 @@
+/* line 1, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 4, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 11, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 31, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.ellipse-text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 1, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/auction.css.scss */
+div#timer {
+  position: fixed;
+  width: 100%;
+  bottom: 90px;
+}
+/* line 1, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#prompt {
+  font-size: 24px;
+  margin-top: 200px;
+  text-align: center;
+}
+
+/* line 7, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#job-string {
+  font-size: 16px;
+  width: 90%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 1em;
+  border: 0;
+  border-bottom: solid 1px #ddd;
+}
+/* line 16, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#job-string:focus {
+  outline-color: #ddd;
+  outline-width: 1px;
+}
+
+/* line 23, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#examples {
+  padding: 2em;
+  line-height: 1.5em;
+}
+/* line 26, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#examples header {
+  line-height: 2.5em;
+  font-size: 1.2em;
+  color: red;
+}
+
+/* line 33, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#new-job-hint {
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: grey;
+}
+
+/* line 40, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+.button {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  width: 320px;
+  background: orange;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* line 52, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+#cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  color: #ddd;
+}
+
+/* line 60, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+.cancel-button {
+  display: inline-block;
+  padding: 0px;
+  border-radius: 16px;
+  border: solid 2px;
+  width: 20px;
+  height: 20px;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+/* line 70, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+div#confirmBox {
+  width: 250px;
+  text-align: center;
+  margin: auto;
+  position: fixed;
+  left: 50px;
+  z-index: 99999;
+  top: 200px;
+  border: solid 1px black;
+  background: lightblue;
+  opacity: 0.95;
+  border-radius: 5px;
+  font-size: 1.25em;
+}
+/* line 84, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+div#confirmBox .message {
+  padding: 2em 0;
+}
+/* line 87, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+div#confirmBox table {
+  width: 100%;
+  border-top: solid 1px;
+  height: 50px;
+  border-color: #696969;
+}
+/* line 93, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+div#confirmBox td:first-child {
+  border-right: solid 1px;
+  border-color: #696969;
+}
+/* line 97, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+div#confirmBox td {
+  width: 50%;
+  cursor: pointer;
+}
+
+/* line 102, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+span.yes, span.no {
+  display: inline-block;
+  width: 49%;
+  padding: 10px 0px;
+  border-top: solid 1px black;
+}
+
+/* line 108, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/components.css.scss */
+div.message {
+  padding: 1em;
+}
+/* line 1, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix, .form-group.inline {
+  *zoom: 1;
+}
+/* line 4, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix:before, .form-group.inline:before, .clearfix:after, .form-group.inline:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 11, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix:after, .form-group.inline:after {
+  clear: both;
+}
+
+/* line 31, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.ellipse-text-overflow, input, textarea, select {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 3, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+div.form-group {
+  margin: 1em;
+  padding: 0.5em;
+  border: solid 1px;
+  border-radius: 5px;
+}
+/* line 9, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+div.form-group textarea {
+  height: 4em;
+  overflow-y: auto;
+}
+/* line 13, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+div.form-group textarea.textarea-sm {
+  height: 3em;
+}
+/* line 17, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+div.form-group textarea.textarea-lg {
+  height: 5em;
+}
+
+/* line 23, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+label {
+  display: block;
+  padding-bottom: 0.5em;
+}
+
+/* line 31, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+.form-group.inline label {
+  display: inline-block;
+  padding: 0.5em;
+}
+/* line 35, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+.form-group.inline input, .form-group.inline select {
+  display: inline;
+  text-align: right;
+  width: 50%;
+  float: right;
+}
+/* line 42, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+.form-group.inline select {
+  direction: rtl;
+  height: 2em;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* line 51, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+.form-group.inline select option {
+  direction: ltr;
+}
+
+/* line 57, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+input, textarea, select {
+  border: 0;
+  padding: 0.5em;
+  font-family: inherit;
+  background: #eee;
+  font-size: 16px;
+  width: 94%;
+  max-width: 94%;
+  white-space: normal;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+/* line 73, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* line 78, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/forms.css.scss */
+input#submit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+  margin: 0;
+  max-width: 100%;
+  background: orange;
+}
+/* line 1, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix, .top-header {
+  *zoom: 1;
+}
+/* line 4, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix:before, .top-header:before, .clearfix:after, .top-header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 11, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.clearfix:after, .top-header:after {
+  clear: both;
+}
+
+/* line 31, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/__global.css.scss */
+.ellipse-text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 3, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 8, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.top-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: lightblue;
+  line-height: 3em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+/* line 20, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.top-header li {
+  padding: 0 1em;
+}
+/* line 24, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.top-header .center {
+  text-align: center;
+  top: 0;
+  margin: auto;
+  pointer-events: none;
+}
+/* line 31, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.top-header .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 36, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.top-header .right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 46, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.progress-container {
+  margin-top: 250px;
+  text-align: center;
+}
+
+/* line 51, /Users/amyhua/Documents/my_projects/dobby1/app/assets/stylesheets/layout.css.scss */
+.container {
+  padding-top: 3em;
+}
+
+/* Make clicks pass-through */
+#loading-bar,
+#loading-bar-spinner {
+  pointer-events: none;
+  -webkit-pointer-events: none;
+  -webkit-transition: 350ms linear all;
+  -moz-transition: 350ms linear all;
+  -o-transition: 350ms linear all;
+  transition: 350ms linear all;
+}
+
+#loading-bar.ng-enter,
+#loading-bar.ng-leave.ng-leave-active,
+#loading-bar-spinner.ng-enter,
+#loading-bar-spinner.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+#loading-bar.ng-enter.ng-enter-active,
+#loading-bar.ng-leave,
+#loading-bar-spinner.ng-enter.ng-enter-active,
+#loading-bar-spinner.ng-leave {
+  opacity: 1;
+}
+
+#loading-bar .bar {
+  -webkit-transition: width 350ms;
+  -moz-transition: width 350ms;
+  -o-transition: width 350ms;
+  transition: width 350ms;
+
+  background: #29d;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -moz-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  -o-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+#loading-bar-spinner {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  top: 100px;
+  left: 171px;
+}
+
+#loading-bar-spinner .spinner-icon {
+  width: 14px;
+  height: 14px;
+
+  border:  solid 2px transparent;
+  border-top-color:  #29d;
+  border-left-color: #29d;
+  border-radius: 10px;
+
+  -webkit-animation: loading-bar-spinner 400ms linear infinite;
+  -moz-animation:    loading-bar-spinner 400ms linear infinite;
+  -ms-animation:     loading-bar-spinner 400ms linear infinite;
+  -o-animation:      loading-bar-spinner 400ms linear infinite;
+  animation:         loading-bar-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes loading-bar-spinner {
+  0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes loading-bar-spinner {
+  0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes loading-bar-spinner {
+  0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes loading-bar-spinner {
+  0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

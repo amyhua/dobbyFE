@@ -2,12 +2,14 @@ app
 .service('jobProperties', function () {
   var jobString;
 
+  var job = {}
+
   return {
-    getJobString: function () {
-      return jobString;
+    getProperty: function(prop) {
+      return job[prop];
     },
-    setJobString: function(value) {
-      jobString = value;
+    setProperty: function(prop, value) {
+      job[prop] = value;
     }
   };
 });

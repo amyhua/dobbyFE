@@ -1,5 +1,8 @@
 var app = angular.module('app', [
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate',
+  'timer',
+  'chieffancypants.loadingBar'
 ]);
 
 app.config(function($routeProvider){
@@ -19,11 +22,11 @@ app.config(function($routeProvider){
     })
     .when('/fields_edit_location', {
       templateUrl: '/pages/fields_edit_location.html',
-      controller: 'HomeCtrl'
+      controller: 'JobCtrl'
     })
     .when('/auction_progress', {
       templateUrl: '/pages/auction_progress.html',
-      controller: 'HomeCtrl'
+      controller: 'AuctionCtrl'
     })
     .when('/matching_dobbies_list', {
       templateUrl: '/pages/matching_dobbies_list.html',

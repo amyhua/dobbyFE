@@ -5,31 +5,32 @@
 </ul>
 
 <div class="container">
-<form id="confirm-fields">
+<form id="confirm-fields" ng-submit="confirmFields()">
   <div class="form-group">
   <!-- TODO: auto-expand textarea -->
     <label>Job Description</label>
-    <textarea class="textarea-sm" ng-model="jobString" wrap="hard" rows="4" cols="20" maxlength="140">
-    </textarea>
+    <input type="text" ng-required="true" class="textarea-sm" ng-model="jobString" wrap="hard" rows="4" cols="20" maxlength="140">
   </div>
 
   <div class="form-group">
   <!-- TODO: auto-expand textarea -->
-    <label>Additional Details</label>
-    <textarea class="textarea-lg" ng-model="jobDetail" wrap="hard" rows="4" cols="20" maxlength="360" placeholder="Include requirements, supplies provided, etc.">
+    <label>Additional Details (optional)</label>
+    <textarea ng-required="false" class="textarea-lg" ng-model="jobDetail" wrap="hard" rows="4" cols="20" maxlength="360" placeholder="Include requirements, supplies provided, etc.">
     </textarea>
   </div>
 
   <div class="form-group inline">
     <label>Address</label>
-    <input ng-model="jobAddress" wrap="hard" cols="20">
+    <input ng-required="true" placeholder="Specify an address" ng-model="jobAddress" wrap="hard" cols="20">
   </div>
 
   <div class="form-group inline">
     <label>I need a Dobby...</label>
-    <select ng-model="jobUrgency" name="jobUrgency" ng-options="urgencyType for urgencyType in urgencyTypes" required="true">
+    <select ng-required="true" ng-model="jobUrgency" name="jobUrgency" ng-options="urgencyType for urgencyType in urgencyTypes" required="true">
+    </select>
   </div>
 
+  <input id="submit" type="submit" value="Submit">
 
 </form>
 </div>
