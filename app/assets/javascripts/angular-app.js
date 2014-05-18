@@ -95,11 +95,15 @@ app.config(function($routeProvider){
       templateUrl: '/pages/edit_payment.html',
       controller: 'HomeCtrl'
     })
+    .when('/profile/:profile_id/job/:job_id/job_offer_price/:job_offer_price', {
+      templateUrl: '/pages/profile.html',
+      controller: 'ProfileCtrl'
+    })
     .when('/profile/:profile_id', {
       templateUrl: '/pages/profile.html',
       controller: 'ProfileCtrl'
     })
-    .when('/edit_profile', {
+    .when('/edit_profile/:profile_id', {
       templateUrl: '/pages/edit_profile.html',
       controller: 'HomeCtrl'
     })

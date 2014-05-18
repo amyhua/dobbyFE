@@ -9,7 +9,7 @@
       <span class="pull-left">Bidder</span>
       <span class="pull-right">Asking Price</span>
     </div>
-    <div ng-repeat="dobby in bidders" class="list-item" ng-click="goToProfile(dobby.bidder_id)">
+    <div ng-repeat="dobby in bidders" class="list-item" ng-click="goToProfile(dobby.bidder_id, dobby.jobID, dobby.askingPrice)">
       <img class="avatar" src="https://avatars0.githubusercontent.com/u/3581705?s=460" width="50">
       <div>
         <span class="name">Amy H</span>
@@ -33,12 +33,18 @@
       </div>
     </div>
 
-    <div class="no-list-item">
+    <div ng-show="bidders.length == 0" class="no-list-item">
       <div id="none-message">We're sorry, nobody bidded for your job!
-      <div id="raise-price">Try raising your maximum offer price:
+
+      <div id="raise-price">
+      <br>
+      Try raising your maximum offer price:
+      <br>
       <br>
       <form ng-submit="raiseMaxOffer()">
-      $ <input type="number" min="{{JobMaxOffer}}" ng-model="newJobMaxOffer" max="99999" value="{{jobMaxOffer}}">
+      $ <input type="number" min="{{jobMaxOffer}}" ng-model="jobMaxOffer" max="99999" value="{{jobMaxOffer}}">
+      <br>
+      <input type="submit" value="Resubmit">
       </form>
       </div>
       </div>

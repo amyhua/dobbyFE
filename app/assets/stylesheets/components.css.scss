@@ -305,6 +305,15 @@ div.badges {
 
 .no-list-item {
   padding: 10px;
+
+
+  input[type="submit"] {
+      margin-top: 2em;
+      background: lightblue;
+      border-radius: 5px;
+      background: #00a3ff;
+      @extend .button-link;
+  }
 }
 
 #none-message {
