@@ -41,3 +41,17 @@
   -o-transition: left 0.35s ease-in-out;
   transition: left 0.35s ease-in-out;
 }
+
+@font-face {
+  font-family: 'RobotoCondensedLight';
+  src: font-url('/assets/fonts/RobotoCondensedLight.tff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoLight';
+  src: font-url('/assets/fonts/RobotoLight.tff') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}

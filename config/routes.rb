@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
 
+  get 'api/bids' => 'application#fake_bids'
+
+  get 'api/available_dobbies' => 'application#fake_available_dobbies'
+
+  post 'api/new_job' => 'application#new_job'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

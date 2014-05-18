@@ -3,8 +3,13 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
+#content {
+  overflow-x: hidden;
+}
 .top-header {
   list-style: none;
   margin: 0;
@@ -12,6 +17,9 @@ body {
   background: lightblue;
   line-height: 3em;
   @extend .clearfix;
+
+  z-index: 999999;
+  opacity: 0.95;
 
   position: fixed;
   top: 0;

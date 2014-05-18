@@ -144,3 +144,80 @@ div#shadow {
     cursor: pointer;
     text-decoration: none;
 }
+
+// -------------- listing of dobbies
+
+.rating {
+  background-image: url("http://www.nofeerentdirect.com/img/stars_map.png");
+  width: 84px;
+  height: 16px;
+  background-position: 0px 0px;
+  display: block;
+
+  &[data-rounded-rating="0"] {
+    background-position: 0px 0px;
+  }
+  &[data-rounded-rating="1"] {
+    background-position: 0px -19px;
+  }
+  &[data-rounded-rating="1.5"] {
+    background-position: 0px -38px;
+  }
+  &[data-rounded-rating="2"] {
+    background-position: 0px -57px;
+  }
+  &[data-rounded-rating="2.5"] {
+    background-position: 0px -76px;
+  }
+  &[data-rounded-rating="3"] {
+    background-position: 0px -95px;
+  }
+  &[data-rounded-rating="3.5"] {
+    background-position: 0px -114px;
+  }
+  &[data-rounded-rating="4"] {
+    background-position: 0px -133px;
+  }
+  &[data-rounded-rating="4.5"] {
+    background-position: 0px -152px;
+  }
+  &[data-rounded-rating="5"] {
+    background-position: 0px -171px;
+  }
+}
+.list-item {
+    width: 350px;
+    height: 60px;
+    padding: 10px 5px;
+    border-bottom: solid 1px #ddd;
+    cursor: pointer;
+    &:hover, &:focus {
+      background: #eee;
+    }
+
+    > img {
+      display: inline-block;
+      height: 60px;
+      width: auto;
+      border-radius: 5px;
+      padding-right: 10px;
+    }
+    > div {
+      display: inline-block;
+      vertical-align: top;
+      height: 100%;
+    }
+
+    .name {
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    .asking-price {
+      display: inline-block;
+      float: right;
+      position: absolute;
+      right: 10px;
+      color: darkred;
+    }
+}

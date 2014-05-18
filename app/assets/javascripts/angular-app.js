@@ -2,7 +2,16 @@ var app = angular.module('app', [
   'ngRoute',
   'ngAnimate',
   'timer',
-  'chieffancypants.loadingBar'
+  'chieffancypants.loadingBar',
+  'doowb.angular-pusher'
+]);
+
+app.config(['PusherServiceProvider',
+  function(PusherServiceProvider) {
+    PusherServiceProvider
+      .setToken('e2289f84b1eb3723b900')
+      .setOptions({});
+  }
 ]);
 
 app.config(function($routeProvider){
@@ -30,11 +39,11 @@ app.config(function($routeProvider){
     })
     .when('/matching_dobbies_list', {
       templateUrl: '/pages/matching_dobbies_list.html',
-      controller: 'HomeCtrl'
+      controller: 'MatchingDobbiesCtrl'
     })
     .when('/bidded_dobbies_list', {
       templateUrl: '/pages/bidded_dobbies_list.html',
-      controller: 'HomeCtrl'
+      controller: 'AuctionCtrl'
     })
     .when('/poster_jobs_requested', {
       templateUrl: '/pages/poster_jobs_requested.html',
@@ -86,9 +95,9 @@ app.config(function($routeProvider){
       templateUrl: '/pages/edit_payment.html',
       controller: 'HomeCtrl'
     })
-    .when('/profile', {
+    .when('/profile/:profile_id', {
       templateUrl: '/pages/profile.html',
-      controller: 'HomeCtrl'
+      controller: 'ProfileCtrl'
     })
     .when('/edit_profile', {
       templateUrl: '/pages/edit_profile.html',

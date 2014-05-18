@@ -5,10 +5,15 @@
     <li class="right">Filter</li>
   </ul>
   <div class="container">
-    <div class="list-item">
+    <div ng-repeat="dobby in bidders" class="list-item" ng-click="goToProfile(dobby.bidder_id)">
       <img class="avatar" src="https://avatars0.githubusercontent.com/u/3581705?s=460" width="50">
-      <span class="name">Amy H</span>
-      <span class="rating"></span>
+      <div>
+        <span class="name">Amy H</span>
+        <span class="asking-price">{{dobby.askingPrice | formatCurrency }}</span>
+        <span class="verified" ng-show="dobby.verified">V</span>
+        <span class="background-checked" ng-show="dobby.bgChecked">BG</span>
+        <span class="rating" data-rounded-rating="{{dobby.rating}}"></span>
+      </div>
     </div>
   </div>
 </div>

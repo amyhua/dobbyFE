@@ -66,20 +66,67 @@ app.controller('JobCtrl', function($scope, $location, $http, jobProperties){
   });
 });
 
-app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLoadingBar, jobProperties){
+app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLoadingBar, jobProperties, Pusher){
 
-  $scope.maxAuctionDuration = 60*5; // in seconds, taken from settings
+  $scope.maxAuctionDuration = 1000*60*5; // in seconds, taken from settings
+
+  var now = new Date();
+  $scope.endTime = now.getTime() + $scope.maxAuctionDuration;
+  // TODO: hard coded 5 minutes
 
   $scope.beginAuction = function(){
     console.log('beginAuction');
-    console.log('TODO: make real');
+
+    $scope.bids = jobProperties.getProperty('bids');
+
+    $scope.bids = [
+      { bidder_id: 1, min_bid: 20 }
+    ];
+
+    Pusher.subscribe('bids', 'updated', function (bid) {
+      // an item was updated. find it in our list and update it.
+      for (var i = 0; i < $scope.bids.length; i++) {
+        if ($scope.bids[i].id === bid.id) {
+          $scope.bids[i] = bid;
+          break;
+        }
+      }
+    });
+
+    var retrieveBids = function () {
+      console.log('getting bids');
+      $http.get('/api/bids')
+        .success(function (bids) {
+          $scope.bids = bids;
+        });
+    };
+
+    $scope.updateBid = function (bid) {
+      console.log('updating auction');
+      $http.post('/api/bids', bid);
+    };
+
+    // load the items
+    retrieveBids();
 
     cfpLoadingBar.start();
 
-    $scope.status = 'Finding available dobbies...';
+    $http.post('/api/new_job', jobProperties.job);
+
+    $scope.status = 'Finding available dobbies who fit your job description...';
+    $http.get('/api/available_dobbies')
+      .success(function(dobbies) {
+        console.log(dobbies);
+        $timeout(function(){
+          // FAKE progress
+          $scope.numAvailableDobbies = dobbies.length;
+          $scope.status = 'Filtering ' + $scope.numAvailableDobbies + 'available dobbies to fit your job deadline, location, and skills...';
 
 
-    $scope.numAvailableDobbies = 300;
+          $scope.get('/api/matching_available_dobbies/job/' + jobProperties.job.job_id)
+
+        }, 2000)
+      });
 
     $timeout(function(){
       $scope.status = 'Inviting dobbies to bid for your job....';
@@ -122,7 +169,30 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
   }
 
 
+  // TODO: mock!
+  $scope.bidders = [
+    { bidder_id: 12, bgChecked: true,  verified: true, askingPrice: 14.50, rating: 0 },
+    { bidder_id: 13, bgChecked: false, verified: true, askingPrice: 14.50, rating: 1 },
+    { bidder_id: 14, bgChecked: false, verified: true, askingPrice: 14.50, rating: 1.5 },
+    { bidder_id: 15, bgChecked: false, verified: true, askingPrice: 14.50, rating: 2 },
+    { bidder_id: 16, bgChecked: false, verified: true, askingPrice: 14.50, rating: 2.5 },
+    { bidder_id: 1234, bgChecked: false, verified: true, askingPrice: 14.50, rating: 3 },
+    { bidder_id: 132, bgChecked: false, verified: true, askingPrice: 14.50, rating: 3.5 },
+    { bidder_id: 132, bgChecked: false, verified: true, askingPrice: 14.50, rating: 4 },
+    { bidder_id: 145, bgChecked: false, verified: true, askingPrice: 14.50, rating: 4.5 },
+    { bidder_id: 19, bgChecked: false, verified: true, askingPrice: 14.50, rating: 5 }
+  ]
 
-
+  $scope.goToProfile = function(bidder_id){
+    console.log('goToProfile', bidder_id);
+    $location.path('/profile/'+bidder_id);
+  }
 });
+
+app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLoadingBar, $routeParams, userProperties){
+  console.log('ProfileCtrl', $routeParams);
+
+  // TODO
+});
+
 
