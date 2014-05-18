@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     render json: Fake.profiles
   end
 
+  def profile
+    render json: Fake.profile["profile_id"]
+  end
+
   def new_job
     params["job"]
   end

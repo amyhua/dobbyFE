@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'api/profiles'  => 'application#profiles'
 
+  get 'api/profiles/:profile_id'  => 'application#profile'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
