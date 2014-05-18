@@ -54,9 +54,10 @@ app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLo
     ]
   }
 
-  // $http.get('/api/profile/:profile_id').success(function(profile){
+  $http.get('/api/profiles').success(function(profiles){
+    $scope.profile = profiles[0];
 
-  // })
+  })
 
 
   $scope.goBack = function(){
