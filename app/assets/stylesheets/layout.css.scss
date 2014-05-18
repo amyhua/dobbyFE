@@ -32,6 +32,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+    padding: 0;
   }
   .right {
     position: absolute;
@@ -50,4 +51,26 @@ body {
 
 .container {
   padding-top: 3em;
+}
+
+// ======== header =======
+
+#menu {
+  -webkit-transition: left 0.15s ease-in-out;
+  -moz-transition: left 0.15s ease-in-out;
+  -ms-transition: left 0.15s ease-in-out;
+  -o-transition: left 0.15s ease-in-out;
+  transition: left 0.15s ease-in-out;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100%;
+
+  left: -300px;
+
+  &.active{
+    left: 0;
+  }
 }

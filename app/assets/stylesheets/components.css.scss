@@ -127,3 +127,20 @@ div#shadow {
     width: 999px;
     display: none;
 }
+
+// ------------ admin panel
+
+.panel {
+    position: fixed;
+    left: -300px; /*left or right and the width of your navigation panel*/
+    width: 300px; /*should match the above value*/
+}
+
+.menu-link {
+    padding: 0 15px;
+    padding-right: 45px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+}

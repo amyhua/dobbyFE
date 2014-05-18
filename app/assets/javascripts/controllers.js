@@ -102,6 +102,7 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
 
   $scope.endAuction = function(){
     console.log('endAuction');
+    $location.path('/bidded_dobbies_list');
   }
 
   $scope.cancelAuction = function(){
