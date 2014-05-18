@@ -107,8 +107,21 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
   $scope.cancelAuction = function(){
     console.log('cancelAuction');
     console.log('TODO: cancelAuction')
-    alert('Are you sure?')
+    $('#confirmBox').fadeIn(100);
+    $('#shadow').fadeIn(50);
   }
+
+  $scope.cancelCancelling = function(){
+    $('#confirmBox').hide();
+    $('#shadow').fadeOut(50);
+  }
+
+  $scope.confirmCancelling = function(){
+    console.log('confirmCancelling. TODO')
+  }
+
+
+
 
 });
 

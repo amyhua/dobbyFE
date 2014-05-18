@@ -49,6 +49,9 @@
     cursor: pointer;
 }
 
+
+// ==== cancel button
+
 #cancel {
   position: absolute;
   top: 0;
@@ -67,6 +70,11 @@
     font-weight: 600;
     margin-left: 2px;
 }
+
+
+// ==== confirm window 
+
+
 div#confirmBox {
     width: 250px;
     text-align: center;
@@ -107,4 +115,15 @@ span.yes, span.no {
 }
 div.message {
     padding: 1em;
+}
+
+
+div#shadow {
+    position: fixed;
+    top: 0;
+    height: 999px;
+    background: black;
+    opacity: 0.5;
+    width: 999px;
+    display: none;
 }
