@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     render json: Fake.available_dobbies
   end
 
+  def profiles
+    render json: Fake.profiles
+  end
+
   def new_job
     params["job"]
   end

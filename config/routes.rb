@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post 'api/new_job' => 'application#new_job'
 
+  get 'api/profiles'  => 'application#profiles'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

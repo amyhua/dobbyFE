@@ -22,9 +22,10 @@ app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLo
     imageUrl: 'https://avatars0.githubusercontent.com/u/3581705?s=460'
   }
 
-  // $http.get('/api/profile/:profile_id').success(function(profile){
+  $http.get('/api/profiles').success(function(profiles){
+    $scope.profile = profiles[0];
 
-  // })
+  })
 
 
   $scope.goBack = function(){
