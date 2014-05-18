@@ -10,9 +10,9 @@
       <span class="pull-right">Asking Price</span>
     </div>
     <div ng-repeat="dobby in bidders" class="list-item" ng-click="goToProfile(dobby.bidder_id, dobby.jobID, dobby.askingPrice)">
-      <img class="avatar" src="https://avatars0.githubusercontent.com/u/3581705?s=460" width="50">
+      <img class="avatar" src="{{dobby.image_url}}" width="50">
       <div>
-        <span class="name">Amy H</span>
+        <span class="name">{{dobby.firstName}} {{dobby.lastName | trim}}</span>
         <span class="asking-price">{{dobby.askingPrice | formatCurrency }}</span>
         <br>
 

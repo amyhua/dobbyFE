@@ -102,7 +102,7 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
 
     console.log('beginAuction');
 
-    $scope.maxAuctionDuration = 1000*60*0.1; // in seconds, taken from settings
+    $scope.maxAuctionDuration = 1000*60*5; // in seconds, taken from settings
 
     var now = new Date();
     $scope.endTime = now.getTime() + $scope.maxAuctionDuration;
@@ -169,7 +169,17 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
         $timeout(function(){
           $scope.numBidsMade = 5;
           $scope.winningBid = 30;
-        }, 1000);
+          $timeout(function(){
+            $scope.numBidsMade = 10;
+            $scope.winningBid = 25;
+
+            $timeout(function(){
+              $scope.numBidsMade = 23;
+              $scope.winningBid = 17.50;
+            }, 4000)
+
+          }, 3000)
+        }, 2000);
       }, 2000);
 
     }, 2000);
@@ -208,16 +218,15 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
 
   // TODO: mock!
   $scope.bidders = [
-    { image_url: 'https://avatars0.githubusercontent.com/u/3581705?s=460', bidder_id: 12, jobID: 3, bgChecked: true,  verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 0 },
-    { image_url: 'https://avatars0.githubusercontent.com/u/1119680?s=460', bidder_id: 13, jobID: 3, bgChecked: false, verified: true, distance: 1.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 1 },
-    { image_url: 'https://avatars0.githubusercontent.com/u/230541?s=460', bidder_id: 14, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 1.5 },
-    { image_url: 'https://avatars1.githubusercontent.com/u/177615?s=460', bidder_id: 15, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 2 },
-    { image_url: 'https://avatars0.githubusercontent.com/u/1119680?s=460', bidder_id: 16, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 2.5 },
-    { image_url: 'https://graph.facebook.com/mihir.chitnis/picture?height=75&width=75', bidder_id: 17, jobID: 3, bgChecked: false, verified: true, distance: 5.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 3 },
-    { image_url: 'https://graph.facebook.com/sankalpshere/picture?height=75&width=75', bidder_id: 19, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 3.5 },
-    { image_url: 'https://graph.facebook.com/kjangla/picture?height=75&width=75', bidder_id: 25, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4 },
-    { image_url: 'https://graph.facebook.com/mihir.chitnis/picture?height=75&width=75', bidder_id: 33, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4.5 },
-    { image_url: 'https://graph.facebook.com/kat.martin.9809/picture?height=75&width=75', bidder_id: 63, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 5 }
+    { firstName: 'Amy', lastName: 'H', image_url: 'https://avatars0.githubusercontent.com/u/3581705?s=460', bidder_id: 12, jobID: 3, bgChecked: true,  verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 3.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 30, rating: 4.5 },
+    { firstName: 'Bob', lastName: 'B', image_url: 'https://avatars0.githubusercontent.com/u/1119680?s=460', bidder_id: 13, jobID: 3, bgChecked: false, verified: true, distance: 1.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 25, rating: 1 },
+    { firstName: 'Charlie', lastName: 'A', image_url: 'https://avatars0.githubusercontent.com/u/230541?s=460', bidder_id: 14, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 1.5 },
+    { firstName: 'Katey', lastName: 'W', image_url: 'https://avatars1.githubusercontent.com/u/177615?s=460', bidder_id: 15, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 40, rating: 2 },
+    { firstName: 'John', lastName: 'A', image_url: 'https://avatars0.githubusercontent.com/u/1119680?s=460', bidder_id: 16, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 32, rating: 2.5 },
+    { firstName: 'Lorde', lastName: 'W', image_url: 'https://graph.facebook.com/sankalpshere/picture?height=75&width=75', bidder_id: 19, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 3.5 },
+    { firstName: 'Timothy', lastName: 'V', image_url: 'https://graph.facebook.com/kjangla/picture?height=75&width=75', bidder_id: 25, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4 },
+    { firstName: 'Ben', lastName: 'Z', image_url: 'https://graph.facebook.com/mihir.chitnis/picture?height=75&width=75', bidder_id: 33, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4.2 },
+    { firstName: 'Deame', lastName: 'D', image_url: 'https://graph.facebook.com/kat.martin.9809/picture?height=75&width=75', bidder_id: 63, jobID: 3, bgChecked: false, verified: true, distance: 0.15, topCategory1: 'Dog Walking', topCategory1Rating: 4.5932, topCategory1numRatings: 3, topCategory2: 'Delivery', topCategory2Rating: 1.323, topCategory2numRatings: 10, askingPrice: 14.50, numRatings: 22, rating: 4 }
   ]
 
   $scope.bidders = $scope.bidders

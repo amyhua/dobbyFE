@@ -7,18 +7,19 @@
   <div class="container">
     <div class="list-item-content clearfix">
       <span class="pull-left">Job</span>
-      <span class="pull-right">Offer Price</span>
+      <span class="pull-right">Offer Price / Distance / Deadline</span>
     </div>
     <div ng-repeat="job in availableJobs" class="list-item" ng-click="goToProfile(dobby.bidder_id, dobby.jobID, dobby.askingPrice)">
-      <img class="avatar" src="https://avatars0.githubusercontent.com/u/3581705?s=460" width="50">
+      <img class="avatar" src="{{job.imageUrl}}" width="50">
       <div>
-        <span class="name">{{job.posterFirstName}} {{job.posterLastName | trim}}</span>
+        <span class="name">{{job.jobName}}</span>
         <span class="asking-price">{{job.offerPrice | formatCurrency }}</span>
         <br>
 
         <span class="rating" data-rounded-rating="{{job.posterRating | roundRating }}"></span>
         <span class="num-ratings">({{job.posterNumRatings}})</span>
         <span class="eta">{{job.distance | formatMiles }}</span>
+        <span class="eta deadline">{{job.deadline }}</span>
 
         <div class="category-ratings">
           <!-- {{ job.description | trim }} -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dobby1</title>
+  <title>Dobby</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
@@ -24,8 +24,8 @@
       <a ng-show="availabilityStatus=='On'" ng-click="changeAvailability('Busy')" id="on-btn"><img src="assets/on-btn.png"><span class="avail-text">Available</span></a>
       <a ng-show="availabilityStatus=='Busy'" ng-click="changeAvailability('Off')" id="in-between-btn"><img src="assets/in-between-btn.png"><span class="avail-text">On a Job</span></a>
     </li>
-    <li><a href="#profile">Profile</a></li>
     <li><a href="#home">Create a Job</a></li>
+    <li><a href="#profile">Profile</a></li>
     <li><a href="#">Edit Payment</a></li>
     <li><a href="#">Support</a></li>
     <li><a href="#">Sign out</a></li>

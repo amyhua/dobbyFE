@@ -9,17 +9,17 @@
   <div>
     {{status}}
   </div>
-  <div ng-show="numAvailableDobbies">Filtering {{numAvailableDobbies}} dobbies to fit your job</div>
-  <div ng-show="numInvitesSent">{{numInvitesSent}} invitations sent</div>
-  <div ng-show="numBiddersAccepted">{{numBiddersAccepted}} dobbies joined your auction</div>
-  <div ng-show="numBidsMade">{{numBidsMade}} bids made</div>
-  <div ng-show="winningBid">Currently winning bid: {{winningBid}}</div>
+  <div style="color: #ddd" ng-show="numAvailableDobbies">Filtering {{numAvailableDobbies}} dobbies to fit your job</div>
+  <div style="color: #ccc" ng-show="numInvitesSent">{{numInvitesSent}} invitations sent</div>
+  <div style="color: #bbb" ng-show="numBiddersAccepted">{{numBiddersAccepted}} dobbies joined your auction</div>
+  <div style="color: black; font-weight: bold" ng-show="numBidsMade">{{numBidsMade}} bids made</div>
+  <div style="color: black; font-weight: bold" ng-show="winningBid">Winning Bid: {{winningBid | formatCurrency}}</div>
   <div id="timer">
-    <timer end-time="endTime"><span ng-show="minutes || seconds">Auction ends in </span><span ng-show="days">{{days}} days, </span><span ng-show="hours">{{hours}} hours, </span><span ng-show="minutes">{{minutes}} minutes, </span><span ng-show="seconds">{{seconds}} seconds.</span></timer>
+    <timer end-time="endTime"><span ng-show="minutes || seconds">Auction automatically ends in </span><span ng-show="days">{{days}} days, </span><span ng-show="hours">{{hours}} hours, </span><span ng-show="minutes">{{minutes}} minutes, </span><span ng-show="seconds">{{seconds}} seconds.</span></timer>
   </div>
 
   <div ng-show="winningBid" class="button" ng-click="endAuction()">
-    End Auction Now at ${{winningBid}}
+    End Auction Now at <strong>{{winningBid | formatCurrency}}</strong>
   </div>
 </div>
 

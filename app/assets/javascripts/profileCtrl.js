@@ -21,7 +21,7 @@ app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLo
     state: 'WA',
     verified: 'Yes',
     bgChecked: 'No',
-    aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    aboutMe: "After years of copyediting newspapers, followed by more years of freelance writing and editing, I am confident in my ability to write, research or edit most anything, from grants and annual reports to features and reviews. I would also be happy to do a Target, Trader Joe's or grocery run, or a load of laundry. I get along well with kids, pets and seniors, and have experience taking care of all three. I cleaned homes for several years, and have catered a few weddings and other events for friends. I've organized successful events, from dinner dances, performances and chalk art festivals to children's birthday parties, and can handle administrative work or office tasks, mundane or arcane. In short, I'm up for doing just about whatever has to get done!",
     imageUrl: 'https://avatars0.githubusercontent.com/u/3581705?s=460',
     references: [
       {
@@ -32,7 +32,7 @@ app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLo
         numRatingsOverall: 10,
         referenceType: 'Positive',
         referencePersona: 'Customer',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt!'
+        comment: 'Amy was very responsive and easy to work with! Thanks Annie for your help surprising my mom with the flowers!'
       },
       {
         firstName: 'Mike',
@@ -42,7 +42,7 @@ app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLo
         numRatingsOverall: 10,
         referenceType: 'Neutral',
         referencePersona: 'Customer',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt!'
+        comment: 'Amy did 2 tasks for us and did a great job.'
       },
       {
         firstName: 'Lily',
@@ -50,9 +50,9 @@ app.controller('ProfileCtrl', function($scope, $location, $http, $timeout, cfpLo
         imageUrl: 'https://avatars1.githubusercontent.com/u/177615?s=460',
         overallRating: 5,
         numRatingsOverall: 10,
-        referenceType: 'Negative',
+        referenceType: 'Positive',
         referencePersona: 'Dobby',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt!'
+        comment: 'Amazing job, fast turnaround and very courteous and professional. Will definitely use Amy again next time!'
       }
     ]
   }
