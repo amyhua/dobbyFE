@@ -230,9 +230,9 @@ app.controller('AuctionCtrl', function($scope, $location, $http, $timeout, cfpLo
   ]
 
   $scope.bidders = $scope.bidders
-                    .sort(function(a,b){ return b.askingPrice - a.askingPrice })
                     .sort(function(a,b){ return b.rating - a.rating })
                     .sort(function(a,b){ return a.distance - b.distance })
+                    .sort(function(a,b){ return a.askingPrice - b.askingPrice });
 
 
   $scope.goToProfile = function(profile_id, job_offer_price, job_id){
