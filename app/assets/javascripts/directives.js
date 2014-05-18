@@ -7,8 +7,8 @@ app.directive('menuLink', function($timeout){
       console.log('menuLink')
 
       element.on('click', function(){
-        $('#menu').addClass('active');
-        $('.push').addClass('pushed');
+        $('#menu').toggleClass('active');
+        $('.push').toggleClass('active');
       })
 
     }

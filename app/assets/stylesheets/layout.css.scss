@@ -56,11 +56,7 @@ body {
 // ======== header =======
 
 #menu {
-  -webkit-transition: left 0.15s ease-in-out;
-  -moz-transition: left 0.15s ease-in-out;
-  -ms-transition: left 0.15s ease-in-out;
-  -o-transition: left 0.15s ease-in-out;
-  transition: left 0.15s ease-in-out;
+  @extend .transition-left;
 
   position: fixed;
   top: 0;
@@ -72,5 +68,14 @@ body {
 
   &.active{
     left: 0;
+  }
+}
+
+.push {
+  position: absolute;
+  @extend .transition-left;
+  left: 0;
+  &.active {
+    left: 300px;
   }
 }
