@@ -4,13 +4,13 @@ var app = angular.module('app', [
   'timer',
   'chieffancypants.loadingBar'
 ])
-// .run(['$templateCache', function($templateCache) {
-//   angular.forEach(Template, function(render, name) {
-//     // Meteor uses Template to store its own templates, too
-//     // Your template file shouldn't start with _ to avoid conflict
-//     if (name[0] !== '_') $templateCache.put(name, render());
-//   });
-// }]);
+.run(['$templateCache', function($templateCache) {
+  angular.forEach(Template, function(render, name) {
+    // Meteor uses Template to store its own templates, too
+    // Your template file shouldn't start with _ to avoid conflict
+    if (name[0] !== '_') $templateCache.put(name, render());
+  });
+}]);
 
 app.config(function($routeProvider){
   $routeProvider
